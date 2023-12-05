@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.transi{
+  animation-name: move;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@media screen and (max-width: 480px) {
+  .home {
+    flex-direction: column-reverse;
+    margin-top: 15vh;
+  }
+}

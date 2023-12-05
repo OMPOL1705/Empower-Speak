@@ -20,7 +20,7 @@ export const Navbar = () => {
       <div className="flex space-x-8 items-center">
         <img src={logo} alt='' className='w-8'></img>
         <Link to='/'>
-          <h1 className='text-xl font-bold text-[#0F092D]'>BillionAbles</h1>
+          <h1 className='text-xl font-bold text-[#0F092D]' style={{fontSize:"27px"}}><b>Empower Speak</b></h1>
         </Link>
       </div>
       <div className="flex space-x-8 items-center">
