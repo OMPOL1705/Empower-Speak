@@ -13,6 +13,7 @@ import { DeafDumb } from "./screens/DeafDumb";
 import { Dyslexia } from "./screens/Dyslexia";
 import { DyslexiaReader } from "./screens/DyslexiaReader";
 import { Chat } from "./screens/Chat";
+import SimpleForm from './components/ChatBot.jsx';
 function App() {
   return (
     <div className="App">
@@ -33,6 +34,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} /> 
         </Routes>
       </Router>
+      <SimpleForm />
     </div>
   );
 }
