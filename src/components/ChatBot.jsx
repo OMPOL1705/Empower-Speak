@@ -1,6 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import ChatBot from 'react-simple-chatbot';
-import disabled from '../utils/disabled.png'
+import disabled from '../utils/disabled.png';
+import { useNavigate } from 'react-router-dom';
 
 const theme = {
   background: '#f5f8fb',
@@ -14,10 +15,13 @@ const theme = {
 };
 
 function SimpleForm() {
+
+  const navigate = useNavigate();
+
   return (
     <ThemeProvider theme={theme}>
       <ChatBot floating={true} enableSmoothScroll={true} speechSynthesis={{ enable: true, lang: 'en' }}
-      floatingStyle={{bottom:"7vh", right:"7vh"}} userAvatar={disabled}
+      floatingStyle={{bottom:"7vh", right:"7vh"}} userAvatar={disabled} recognitionEnable={true}
         steps={[
           {
             id: '1',
@@ -64,11 +68,48 @@ function SimpleForm() {
           {
             id: '8',
             message: `Now, there's a nifty feature that not only tells you about pictures but also says the names of things right in front of you. So, when there's a photo, it'll not just describe it, but also mention the names of the cool stuff in the picture. It's like having your own personal guide to the online world, making sure you know exactly what's going on. Explore our website, and let this awesome tool bring a whole new level of inclusivity and fun to your online journey!`,
-            trigger: '6',
+            trigger: '21',
+          },
+          {
+            id: '21',
+            message: `Do you want to try this feature?`,
+            trigger: '19',
+          },
+          {
+            id: '19',
+            user: true,
+            validator: (value) => {
+              if (value.toLowerCase() === 'yes') {
+                navigate('/object_detection');
+              } 
+              return true;
+            },
+            trigger: '24',
           },
           {
             id: '9',
             message: `Now, your computer can transform written words into spoken ones, making it super easy for you to understand content without having to read. It's like having a virtual storyteller right there with you, narrating articles or pages. Just imagine, any text on our site can be spoken out loud, providing a more accessible and enjoyable experience for everyone. Explore our website and let this handy tool open up a new world of effortless listening!`,
+            trigger: '22',
+          },
+          {
+            id: '22',
+            message: `Do you want to try this feature?`,
+            trigger: '23',
+          },
+          {
+            id: '23',
+            user: true,
+            validator: (value) => {
+              if (value.toLowerCase() === 'yes') {
+                navigate('/text_to_speech');
+              } 
+              return true;
+            },
+            trigger: '24',
+          },
+          {
+            id: '24',
+            message: `I will redirect you to that feature.`,
             trigger: '6',
           },
           {

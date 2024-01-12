@@ -12,8 +12,7 @@ import { VisuallyImpaired } from "./screens/VisuallyImpaired";
 import { DeafDumb } from "./screens/DeafDumb";
 import { Dyslexia } from "./screens/Dyslexia";
 import { DyslexiaReader } from "./screens/DyslexiaReader";
-import { Chat } from "./screens/Chat";
-import SimpleForm from './components/ChatBot.jsx';
+import SimpleForm from './components/ChatBot';
 function App() {
   return (
     <div className="App">
@@ -29,12 +28,12 @@ function App() {
           <Route path="/text_to_speech" element={<TextToSpeech />} />   
           <Route path="/object_detection" element={<ObjectDetection />} />     
           <Route path="/sign_detection" element={<SignDetection />} />    
-          <Route path="chat" element={<Chat />} />    
+          <Route path="/chat" element={<SimpleForm />} />    
           <Route path="/login" element={<Login />} /> 
           <Route path="/signup" element={<SignUp />} /> 
         </Routes>
-      </Router>
       <SimpleForm />
+      </Router>
     </div>
   );
 }

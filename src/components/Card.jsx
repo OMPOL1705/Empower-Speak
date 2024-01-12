@@ -8,3 +8,5 @@ export const Card = ({ name, data }) => {
     </div>
   )
 }
+
+
