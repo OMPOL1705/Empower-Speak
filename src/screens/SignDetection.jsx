@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react";
 import * as tf from "@tensorflow/tfjs";
 import Webcam from "react-webcam";
 import {drawRect1} from "./utilities"; 
+import jso from "../assets/model.json"
 
 export default function SignDetection() {
   const webcamRef = useRef(null);
@@ -74,7 +75,7 @@ export default function SignDetection() {
     }
   };
 
-  useEffect(()=>{runCoco()},[]);
+  // useEffect(()=>{runCoco()},[]);
 
   return (
     <div className='bg-green-200 min-h-screen'>
